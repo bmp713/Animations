@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS | Inline Layout</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="Inline.css">
+</head>
+<script>
+function showCoords(event){
+    var x = event.clientX;
+   	var y = event.clientY;
+    //document.getElementById("coordinates").innerHTML = "X, Y = " + x + ", " + y;
+    document.getElementById("coordinates").innerHTML = "Y-Offset = " + window.pageYOffset;
+}
+function scrollFade(){
+	if( window.pageYOffset < 100 ){
+		document.getElementById("row_1").style.background = "rgba(50, 0, 0, 0.8)";
+	}
+	if( window.pageYOffset > 100 && window.pageYOffset < 1000 ){
+		document.getElementById("row_1").style.background = "rgba(50, 0, 0, 0.2)";		
+		document.getElementById("row_2").style.background = "rgba(10, 10, 50, 0.8)";
+	}
+	if( window.pageYOffset > 1000 && window.pageYOffset < 2000 ){
+		document.getElementById("row_1").style.background = "rgba(50, 0, 0, 0.8)";
+		document.getElementById("row_2").style.background = "rgba(0, 0, 50, 0.2)";
+		document.getElementById("row_3").style.background = "rgba(100, 100, 100, 0.8)";
+	}
+	if( window.pageYOffset > 2000 && window.pageYOffset < 3000 ){
+		document.getElementById("row_2").style.background = "rgba(10, 10, 50, 0.8)";
+		document.getElementById("row_3").style.background = "rgba(50, 0, 0, 0.2)";
+	}
+	if( window.pageYOffset > 3000 ){
+		document.getElementById("row_3").style.background = "rgba(100, 100, 100, 0.8)";
+	}
+}
+function smoothScroll( elementId ){
+	var lines = 15; // Might need to make responsive
+	var current = window.pageYOffset;
+	var destination = document.getElementById( elementId ).offsetTop;
+
+	var timer = setInterval( function(){
+		if( current <= destination ){
+			current = current + lines;
+			window.scrollTo( 0, current );
+			if( current >= destination ){
+				clearInterval( timer );
+				window.scrollTo( 0, destination )
+			}
+		}
+		if( current >= destination ){
+			current = current - lines;
+			window.scrollTo( 0, current );
+			if( current <= destination ){
+				clearInterval( timer );
+				window.scrollTo( 0, destination )
+			}
+		}
+	}, 1 );
+}
+function animateRows(){
+	var obj = document.getElementById("header");
+
+	if( window.pageYOffset < 1000 ){
+		setTimeout( function () {
+			object.style.height = 0;
+		}, 5000);
+	}		
+	if( window.pageYOffset < 2000 ){
+		obj = document.getElementById("row_2");
+		setTimeout( function () {
+			object.style.height = 0;
+		}, 5000);
+	}
+	if( window.pageYOffset < 3000 ){
+		obj = document.getElementById("row_3");
+		setTimeout( function () {
+			object.style.height = 0;
+		}, 5000);
+	}
+	if( window.pageYOffset < 4000 ){
+		obj = document.getElementById("row_4");
+		setTimeout( function () {
+			object.style.height = 0;
+		}, 5000);
+	}
+}
+function parallax(){
+	document.getElementById("row_1").style.top = -(window.pageYOffset/2) + 'px';
+}
+window.addEventListener("scroll", parallax);
+window.addEventListener("scroll", showCoords);
+window.addEventListener("scroll", scrollFade);
+//animateRows();
+</script>
+<body>
+
+	<div id="container" onmousemove="showCoords(event)">
+
+		<div id="coordinates">
+			<p>Y Offset</p>
+		</div>
+
+		<a onclick="smoothScroll('main')">
+			<header id="header">
+				<img src="assets/images/logo_1.png" width="200px">
+				<br><br><h2>Think different.</h2>
+			</header>
+		</a>
+
+		<main id="main">
+			<a onclick="smoothScroll('row_2')">
+				<div id="row_1">
+				</div>
+			</a>
+			<a onclick="smoothScroll('row_3')">
+				<div id="row_2">
+				</div>
+			</a>
+			<a onclick="smoothScroll('footer')">
+				<div id="row_3">
+				</div>
+			</a>
+		</main>
+
+		<a onclick="smoothScroll('header')"> 
+			<footer id="footer">
+				<div id="footer_text" style="width: 90%">
+					<h1>Parallax</h1><br>
+					<p>
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					<br><br>
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax. 				
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax. 				
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax. 				
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax. 				
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax. 				
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax. 				
+					This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
+					</p><br><br><br>
+				</div>
+			</footer>
+		</a>
+
+	</div>
+
+</body>
+</html>
+
+
+

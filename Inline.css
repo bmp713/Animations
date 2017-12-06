@@ -1,0 +1,121 @@
+#coordinates{
+	position: fixed;
+	top: 0;
+	//left: 10%;
+	height: 25px;
+	color: white;
+}
+body{
+		background: url("assets/images/logo_1.png") no-repeat fixed; 
+        background-size: cover;
+}
+#container{
+		width: 100%;
+		margin: auto;
+		overflow: auto;
+
+		background: url("assets/images/apple-mouse.jpg") no-repeat fixed; background-size: cover;
+		font: 24px sans-serif;
+		font-family: sans-serif, arial, times;}
+header{
+		height: 700px;
+		padding-top: 300px;
+		text-align: center;
+
+		font: 16px san-serif;
+		color: rgba(200, 200, 200, 1);
+		background: rgba(0, 0, 20, 0.7);
+
+		transition: background 2s;
+		animation: fadein 7s;
+}
+header:hover{
+		transition: background 2s;
+		background: rgba(0, 0, 20, 0.3);
+}
+#main{
+		font-size: 0; /* Required to remove inline-block spacing */
+}
+#row_1{
+		width: 100%; 
+		height: 1000px;
+
+		font-size: 24px; 
+		color: rgba(100, 100, 100, 1);
+		background: rgba(50, 0, 0, 0.8);
+		background: url("assets/images/devices.jpg") no-repeat fixed; background-size: cover;
+		transition: background 3s;
+}	
+#row_1:hover{
+		transition: background 2s;
+		//background: rgba(50, 0, 0, 0.4);
+}
+#row_2{
+		width: 100%; 
+		height: 1000px;
+
+		font-size: 24px; 
+		color: rgba(100, 100, 100, 1);
+		background: rgba(0, 50, 0, 0.8);
+		transition: background 3s;
+}	
+#row_2:hover{
+		transition: background 2s;
+}
+#row_3{
+		width: 100%; 
+		height: 1000px;
+
+		font-size: 24px; 
+		color: rgba(100, 100, 100, 1);
+		background: rgba(50, 0, 0, 0.8);
+		transition: background 3s;
+}	
+#row_3:hover{
+		transition: background 2s;
+}
+
+
+#footer{
+	  	width: 100%;
+	  	height: 500px;
+		padding: 20px;
+		font: 10px arial;
+		color: rgba(150, 150, 150, 1);
+		background: rgba(10, 10, 10, 0.7);
+		overflow: hidden;
+}
+#footer h1{
+		font: 48px arial;
+}
+
+
+@keyframes fadein{
+	0%{ 	opacity: 0;}
+    100%{ 	opacity: 1;}
+}
+@keyframes slidein{
+	0%{		margin-left: 100%;}
+	100%{ 	margin-left: 0%;}
+}
+
+
+@media(max-width: 768px){
+	header{
+		height: 350px;
+		padding-top: 100px;
+	}
+	header img{
+		width: 100px;
+	}
+	#row_1, #row_2, #row_3{
+		height: 700px;
+	}
+}
+
+
+body, div, h1, h2, h3, p{ margin: 0px; padding: 0px; box-sizing: border-box; } 
+a{ cursor: pointer; text-decoration: none; }
+
+
+
